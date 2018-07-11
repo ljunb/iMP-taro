@@ -3,8 +3,8 @@ import { View, Text, ScrollView } from "@tarojs/components";
 import "./index.scss";
 
 interface Person {
-  name: string,
-  time: string
+  name: string;
+  time: string;
 }
 
 export default class Index extends Component {
@@ -30,18 +30,8 @@ export default class Index extends Component {
     { name: "小明6", time: "2018/07/11 22:16" }
   ];
 
-  componentWillMount() {}
-
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  handleClick = (): void => {
-    this.setState({ count: this.state.count + 1 });
+  handleClickRow = (person: Person): void => {
+    console.log(person);
   };
 
   render() {
@@ -68,7 +58,11 @@ export default class Index extends Component {
         </View>
         {this.people.map((item: Person, key: number) => {
           return (
-            <View className="row" key={`Row_${key}`}>
+            <View
+              className="row"
+              key={`Row_${key}`}
+              onClick={this.handleClickRow.bind(this, item)}
+            >
               <View className="avatar" />
               <View className="name-wrapper">
                 <Text className="name">{item.name}</Text>
