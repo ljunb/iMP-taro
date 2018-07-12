@@ -19,7 +19,7 @@
     "@tarojs/router": "^0.0.68",
     "@tarojs/taro": "^0.0.68",
     "@tarojs/taro-h5": "^0.0.68",
-    "@tarojs/taro-weapp": "^0.0.68",
+    "@tarojs/taro-weapp": "0.0.68",
     "nervjs": "^1.3.0"
   },
   "devDependencies": {

@@ -1,8 +1,19 @@
+.scroll-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   padding: 30px;
   flex-direction: column;
-  background-color: lightgray;
 }
 .city-wrp {
   display: flex;
@@ -26,6 +37,7 @@
   justify-content: center;
   margin-top: 30px;
   height: 70px;
+  border-radius: 8px;
 }
 .input-icon {
   height: 32px;
@@ -52,13 +64,11 @@
 }
 .wind-wrp {
   display: flex;
-  align-items: center;
+  align-items: baseline;
 }
 .wind-icon {
-  height: 32px;
-  width: 32px;
-  border-radius: 16px;
-  background-color: red;
+  color: rgba($color: #FFFFFF, $alpha: 0.8);
+  font-size: 20px;
 }
 .wind-text {
   color: white;
@@ -92,4 +102,11 @@
   font-size: 20px;
   margin-left: 10px;
   font-weight: 100;
+}
+.bottom-wrp {
+  display: flex;
+  background-color:rgba($color: #000000, $alpha: 0.2);
+  height: 100px;
+  width: 100%;
+  align-items: center;
 }
