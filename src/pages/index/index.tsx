@@ -51,7 +51,6 @@ export default class Index extends Component {
     const windScale = (weather && weather.now.wind_scale) || 0; // 风力大小
     const o3Num = (weather && weather.now.air_quality.city.o3) || 0; // 臭氧指数
     const airQuality = (weather && weather.now.air_quality.city.quality) || ""; // 空气质量
-    console.log(this.state.windowHeight);
     return (
       <View>
         <Image src={BgCoverIcon} style="width:100%;height:603px;" />
