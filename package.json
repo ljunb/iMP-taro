@@ -14,6 +14,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@tarojs/async-await": "0.0.69",
     "@tarojs/components": "^0.0.68",
     "@tarojs/router": "^0.0.68",
     "@tarojs/taro": "^0.0.68",
