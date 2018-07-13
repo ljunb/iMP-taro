@@ -14,11 +14,36 @@ export default class Index extends Component {
   };
 
   componentDidMount() {
+    this.setupBaseLocationInfo();
+
     this.fetchWeatherData();
     const res = Taro.getSystemInfoSync();
     this.setState({ windowHeight: res.screenHeight });
     console.log(res);
   }
+
+  setupBaseLocationInfo = async () => {
+    try {
+      const locationInfo = await Taro.getLocation();
+      const options = {
+        header: { "content-type": "application/json" },
+        url: "https://apis.map.qq.com/ws/geocoder/v1/",
+        data: {
+          location: `${locationInfo.latitude},${locationInfo.longitude}`,
+          key: 'C5XBZ-QLEKW-QKMR7-OTJPD-OWBZT-ZQFD3',
+          get_poi: 1
+        }
+      };
+      const { statusCode, data: { result, message } } = await Taro.request(options);
+      if (statusCode === 200) {
+        console.log(result);
+      } else {
+        console.log(message);
+      }
+    } catch (e) {
+      console.log(`获取位置出错：${e}`);
+    }
+  };
 
   fetchWeatherData = async () => {
     try {
@@ -53,7 +78,7 @@ export default class Index extends Component {
     const airQuality = (weather && weather.now.air_quality.city.quality) || ""; // 空气质量
     return (
       <View>
-        <Image src={BgCoverIcon} style="width:100%;height:603px;" />
+        <Image src={BgCoverIcon} style={`width:100%;height:${this.state.windowHeight - 64}px;`} />
         <ScrollView className="scroll-view">
           <View className="header">
             <View className="city-wrp">
