@@ -46,6 +46,8 @@ const config = {
     }
   },
   defineConstants: {
+    wxMapUrl: '"https://apis.map.qq.com/ws/geocoder/v1/"',
+    wxMapKey: '"C5XBZ-QLEKW-QKMR7-OTJPD-OWBZT-ZQFD3"',
   },
   weapp: {
 
